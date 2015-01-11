@@ -20,4 +20,11 @@ defmodule MixEx.Bucket do
 		Agent.update(bucket, &HashDict.put(&1, key, value))
 	end
 
+	@doc """
+	Deletes `key` from `bucket`
+	"""
+	def delete(bucket, key) do
+		Agent.get_and_update(bucket, &HashDict.pop(&1, key))
+	end
+
 end

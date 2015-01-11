@@ -12,4 +12,11 @@ defmodule MixEx.BucketTest do
 		MixEx.Bucket.put(bucket, "milk", 3)
 		assert MixEx.Bucket.get(bucket, "milk") == 3
 	end
+
+	test "deletes value by key", %{bucket: bucket} do
+		MixEx.Bucket.put(bucket, "milk", 3)
+
+		assert MixEx.Bucket.delete(bucket, "milk") == 3
+		assert MixEx.Bucket.get(bucket, "milk") == nil
+	end
 end
