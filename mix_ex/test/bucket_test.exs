@@ -6,9 +6,11 @@ defmodule MixEx.BucketTest do
 		{:ok, bucket: bucket}
 	end
 
-	test "stores values by key", %{bucket: bucket} do
+	test "bucket is initially empty", %{bucket: bucket} do
 		assert MixEx.Bucket.get(bucket, "milk") == nil
+	end
 
+	test "stores values by key", %{bucket: bucket} do
 		MixEx.Bucket.put(bucket, "milk", 3)
 		assert MixEx.Bucket.get(bucket, "milk") == 3
 	end
