@@ -26,6 +26,13 @@ defmodule MixEx.Registry do
 		GenServer.cast(server, {:create, name})
 	end
 
+	@doc """
+	Stops the registry
+	"""
+	def stop(server) do
+		GenServer.cast(server, :stop)
+	end
+
 	# Server Callbacks
 
 	def init(:ok) do
@@ -34,6 +41,10 @@ defmodule MixEx.Registry do
 
 	def handle_call({:lookup, name}, _from, names) do
 		{:reply, HashDict.fetch(names, name), names}
+	end
+
+	def handle_call(:stop, _from, state) do
+		{:stop, :normal, :ok, state}
 	end
 
 	def handle_cast({:create, name}, names) do
