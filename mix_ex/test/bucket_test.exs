@@ -1,8 +1,12 @@
 defmodule MixEx.BucketTest do
 	use ExUnit.Case, async: true
 
-	test "stores values by key" do
+	setup do
 		{:ok, bucket} = MixEx.Bucket.start_link
+		{:ok, bucket: bucket}
+	end
+
+	test "stores values by key", %{bucket: bucket} do
 		assert MixEx.Bucket.get(bucket, "milk") == nil
 
 		MixEx.Bucket.put(bucket, "milk", 3)
