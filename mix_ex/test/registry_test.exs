@@ -12,6 +12,6 @@ defmodule MixEx.RegistryTest do
 
 	test "spawns buckets", %{registry: registry} do
 		MixEx.Registry.create(registry, "shopping")
-		assert {:ok, bucket} = MixEx.Registry.lookup(registry, "shopping")
+		assert {:ok, _bucket} = MixEx.Registry.lookup(registry, "shopping")
 	end
 end

@@ -36,7 +36,7 @@ defmodule MixEx.Registry do
 		{:reply, HashDict.fetch(names, name), names}
 	end
 
-	def handle_cast({:create, name}, _from, names) do
+	def handle_cast({:create, name}, names) do
 		if HashDict.has_key?(names, name) do
 			{:noreply, names}
 		else
@@ -44,3 +44,4 @@ defmodule MixEx.Registry do
 			{:noreply, HashDict.put(names, name, bucket)}
 		end
 	end
+end
