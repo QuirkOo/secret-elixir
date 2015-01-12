@@ -11,8 +11,9 @@ defmodule MixEx.RegistryTest do
 	end
 
 	setup do
+		{:ok, sup} = MixEx.Bucket.Supervisor.start_link
 		{:ok, manager} = GenEvent.start_link
-		{:ok, registry} = MixEx.Registry.start_link(manager)
+		{:ok, registry} = MixEx.Registry.start_link(manager, sup)
 
 		GenEvent.add_mon_handler(manager, Forwarder, self())
 		{:ok, registry: registry}
@@ -31,6 +32,16 @@ defmodule MixEx.RegistryTest do
 		MixEx.Registry.create(registry, "shopping")
 		{:ok, bucket} = MixEx.Registry.lookup(registry, "shopping")
 		Agent.stop(bucket)
+		assert MixEx.Registry.lookup(registry, "shopping") == :error
+	end
+
+	test "removes buckets on crash", %{registry: registry} do
+		MixEx.Registry.create(registry, "shopping")
+		{:ok, bucket} = MixEx.Registry.lookup(registry, "shopping")
+
+		# Kill the bucket and wait for notification
+		Process.exit(bucket, :shutdown)
+		assert_receive {:exit, "shopping", ^bucket}
 		assert MixEx.Registry.lookup(registry, "shopping") == :error
 	end
 
