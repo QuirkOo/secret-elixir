@@ -66,4 +66,8 @@ defmodule MixEx.Registry do
 		names = HashDict.delete(names, name)
 		{:noreply, {names, refs}}
 	end
+
+	def handle_info(_msg, state) do
+		{:noreply, state}
+	end
 end
