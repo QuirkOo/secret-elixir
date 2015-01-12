@@ -36,10 +36,12 @@ defmodule MixEx.Registry do
 	# Server Callbacks
 
 	def init(:ok) do
-		{:ok, HashDict.new}
+		names = HashDict.new
+		refs = HashDict.new
+		{:ok, {names, refs}}
 	end
 
-	def handle_call({:lookup, name}, _from, names) do
+	def handle_call({:lookup, name}, _from, {names, _}) do
 		{:reply, HashDict.fetch(names, name), names}
 	end
 
@@ -47,12 +49,15 @@ defmodule MixEx.Registry do
 		{:stop, :normal, :ok, state}
 	end
 
-	def handle_cast({:create, name}, names) do
+	def handle_cast({:create, name}, {names, refs}) do
 		if HashDict.has_key?(names, name) do
-			{:noreply, names}
+			{:noreply, {names, refs}}
 		else
-			{:ok, bucket} = MixEx.Bucket.start_link
-			{:noreply, HashDict.put(names, name, bucket)}
+			{:ok, pid} = MixEx.Bucket.start_link
+			ref = Process.monitor(pid)
+			refs = HashDict.put(refs, ref, name)
+			names = HashDict.put(names, name, pid)
+			{:noreply, {names, refs}}
 		end
 	end
 end
