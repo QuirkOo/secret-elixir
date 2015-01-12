@@ -41,8 +41,8 @@ defmodule MixEx.Registry do
 		{:ok, {names, refs}}
 	end
 
-	def handle_call({:lookup, name}, _from, {names, _}) do
-		{:reply, HashDict.fetch(names, name), names}
+	def handle_call({:lookup, name}, _from, {names, _} = state) do
+		{:reply, HashDict.fetch(names, name), state }
 	end
 
 	def handle_call(:stop, _from, state) do
@@ -59,5 +59,11 @@ defmodule MixEx.Registry do
 			names = HashDict.put(names, name, pid)
 			{:noreply, {names, refs}}
 		end
+	end
+
+	def handle_info({:DOWN, ref, :process, _pid, _reason}, {names, refs}) do
+		{name, refs} = HashDict.pop(refs, ref)
+		names = HashDict.delete(names, name)
+		{:noreply, {names, refs}}
 	end
 end

@@ -14,4 +14,11 @@ defmodule MixEx.RegistryTest do
 		MixEx.Registry.create(registry, "shopping")
 		assert {:ok, _bucket} = MixEx.Registry.lookup(registry, "shopping")
 	end
+
+	test "removes buckets on exit", %{registry: registry} do
+		MixEx.Registry.create(registry, "shopping")
+		{:ok, bucket} = MixEx.Registry.lookup(registry, "shopping")
+		Agent.stop(bucket)
+		assert MixEx.Registry.lookup(registry, "shopping") == :error
+	end
 end
