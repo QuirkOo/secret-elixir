@@ -6,3 +6,4 @@ http://devintorr.es/blog/2013/01/22/the-excitement-of-elixir/
 http://damienkatz.net/2008/03/what_sucks_abou.html
 http://devintorr.es/blog/2013/06/11/elixir-its-not-about-syntax/
 http://pygments.org/
+http://joearms.github.io/2013/05/31/a-week-with-elixir.html <- Cons
