@@ -1,0 +1,5 @@
+defmacro unless(clause, expression) do
+	quote do
+		if(!unquote(clause), do: unquote(expression))
+	end
+end
