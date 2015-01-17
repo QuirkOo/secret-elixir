@@ -1,0 +1,10 @@
+Eshell
+1> timer:tc(lists, filter, [ fun (X) -> X rem 3 == 0 end, lists:seq(1, 1000000) ]).
+{3108780,[...]}
+
+iex(1)> :timer.tc(:lists, :filter, 4
+	[ fn x -> rem(x,3) == 0 end, :lists.seq(1, 1000000) ])
+{2789563,[...]}
+
+iex(2)> :timer.tc(Enum, :filter, [ 1..1000000, fn x -> rem(x,3) == 0 end ]) 
+{2277837,[...]}
