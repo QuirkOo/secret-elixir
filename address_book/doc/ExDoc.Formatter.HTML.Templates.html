@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ExDoc.Formatter.HTML.Templates</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="css/elixir.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <section id="content">
+      <div class="breadcrumbs">Address Book v0.0.1 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="ExDoc.html">ExDoc</a> &rarr; Formatter &rarr; <a href="ExDoc.Formatter.HTML.html">HTML</a> &rarr; <a href="ExDoc.Formatter.HTML.Templates.html">Templates</a></div>
+      <h1>
+        ExDoc.Formatter.HTML.Templates
+        
+      </h1>
+
+      <ul class="summary_links">
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+        
+          <li><a href="#functions_details">Functions</a></li>
+        
+        
+        
+      </ul>
+
+      
+        <section id="moduledoc" class="docstring">
+          <p>Handle all template interfaces for the HTML formatter.</p>
+
+        </section>
+      
+
+      
+        <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L1" class="view_source">Source</a>
+      
+
+      
+        <h2 id="summary">Summary<span class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></span></h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#detail_template/2">detail_template(node, module)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#index_template/1">index_template(config)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#list_item_template/1">list_item_template(node)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#list_page/4">list_page(scope, nodes, config, has_readme)</a></td>
+  
+    <td class="summary_synopsis"><p>Generates the listing</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#list_template/4">list_template(scope, nodes, config, has_readme)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#module_page/3">module_page(node, config, all)</a></td>
+  
+    <td class="summary_synopsis"><p>Generate content from the module template for a given <code class="inline">node</code></p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#module_template/7">module_template(config, module, types, functions, macros, callbacks, all)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#overview_entry_template/1">overview_entry_template(node)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#overview_template/4">overview_template(config, modules, exceptions, protocols)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#readme_template/2">readme_template(config, content)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#summary_template/1">summary_template(node)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#type_detail_template/2">type_detail_template(node, module)</a></td>
+  
+</tr>
+
+        </table>
+      
+
+      
+
+      
+        <section id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <section class="detail">
+  <div class="detail_header" id="detail_template/2">
+    <span class="signature"><strong>detail_template(node, module)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#detail_template/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L124" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="index_template/1">
+    <span class="signature"><strong>index_template(config)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#index_template/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L124" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="list_item_template/1">
+    <span class="signature"><strong>list_item_template(node)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#list_item_template/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L124" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="list_page/4">
+    <span class="signature"><strong>list_page(scope, nodes, config, has_readme)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#list_page/4" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Generates the listing.</p>
+
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L22" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="list_template/4">
+    <span class="signature"><strong>list_template(scope, nodes, config, has_readme)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#list_template/4" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L124" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="module_page/3">
+    <span class="signature"><strong>module_page(node, config, all)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#module_page/3" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Generate content from the module template for a given <code class="inline">node</code></p>
+
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L11" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="module_template/7">
+    <span class="signature"><strong>module_template(config, module, types, functions, macros, callbacks, all)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#module_template/7" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L124" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="overview_entry_template/1">
+    <span class="signature"><strong>overview_entry_template(node)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#overview_entry_template/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L124" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="overview_template/4">
+    <span class="signature"><strong>overview_template(config, modules, exceptions, protocols)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#overview_template/4" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L124" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="readme_template/2">
+    <span class="signature"><strong>readme_template(config, content)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#readme_template/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L124" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="summary_template/1">
+    <span class="signature"><strong>summary_template(node)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#summary_template/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L124" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="type_detail_template/2">
+    <span class="signature"><strong>type_detail_template(node, module)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#type_detail_template/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/ex_doc/formatter/html/templates.ex#L124" class="view_source">Source</a>
+  
+</section>
+
+        </section>
+      
+
+      
+
+      
+    </section>
+  </body>
+</html>

@@ -9,3 +9,13 @@ defmodule Unless do
 		end
 	end
 end
+
+require Unless
+
+Unless.fun true do
+	IO.puts "This should never be printed"
+end
+
+Unless.macro true do
+	IO.puts "This should never be printed"
+end

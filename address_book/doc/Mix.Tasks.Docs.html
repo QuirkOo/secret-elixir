@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mix.Tasks.Docs</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="css/elixir.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <section id="content">
+      <div class="breadcrumbs">Address Book v0.0.1 &rarr; <a href="overview.html">Overview</a> &rarr; Mix &rarr; Tasks &rarr; <a href="Mix.Tasks.Docs.html">Docs</a></div>
+      <h1>
+        Mix.Tasks.Docs
+        
+      </h1>
+
+      <ul class="summary_links">
+        
+        
+        
+        
+        
+      </ul>
+
+      
+        <section id="moduledoc" class="docstring">
+          <p>Uses ExDoc to generate a static web page from the docstrings extracted from
+all of the project’s modules.</p>
+<h2>Command line options</h2>
+<ul>
+<li><code class="inline">--output</code>, <code class="inline">-o</code> - output directory for the generated docs; default: <code class="inline">&quot;doc&quot;</code>
+</li>
+</ul>
+<h2>Configuration</h2>
+<p>The task uses the project’s <code class="inline">:name</code> key if defined, otherwise it will use the
+<code class="inline">:app</code> key as a substitute.</p>
+<p>It also uses the <code class="inline">:version</code> key and <code class="inline">:source_url</code> from the project’s configuration.</p>
+<p>The following options should be put under the <code class="inline">:docs</code> key in your project’s
+main configuration. The docs options should be a keyword list or a function
+returning a keyword list that will be lazily executed.</p>
+<ul>
+<li><p><code class="inline">:output</code> - output directory for the generated docs; default: “doc”.
+  May be overriden by command line argument.</p>
+</li>
+<li><p><code class="inline">:readme</code> - boolean indicating whether a project README should be created
+  from a README.md; default: <code class="inline">false</code>.</p>
+</li>
+<li><p><code class="inline">:formatter</code> - doc formatter to use; default: “html”.</p>
+</li>
+<li><p><code class="inline">:source_root</code> - path to the source code root directory; default: “.” (current directory).</p>
+</li>
+<li><p><code class="inline">:source_beam</code> - path to the beam directory; default: mix’s compile path.</p>
+</li>
+<li><p><code class="inline">:source_url_pattern</code> - public URL of the project.
+  Derived from project’s <code class="inline">:source_url</code> if not present.</p>
+</li>
+<li><p><code class="inline">:source_ref</code> - the branch/commit/tag used for source link inference.
+  Ignored if <code class="inline">:source_url_pattern</code> is provided; default: master.</p>
+</li>
+<li><code class="inline">:main</code> - main page of the documentation. It may be a module or a
+  generated page, like “overview” or “README”;
+</li>
+</ul>
+
+        </section>
+      
+
+      
+        <a href="https://github.com/QuirkOo/secret-elixir/blob/master/deps/ex_doc/lib/mix/tasks/docs.ex#L1" class="view_source">Source</a>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </section>
+  </body>
+</html>
